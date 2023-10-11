@@ -1,5 +1,27 @@
 const url = "https://jsonplaceholder.typicode.com/users";
 const users = document.querySelector("#users");
+const table = document.querySelector('.table');
+
+const usernameInput = document.querySelector('#usernameInput');
+const firstNameInput = document.querySelector('#firstNameInput');
+const lastNameInput = document.querySelector('#lastNameInput');
+const clearSearchLink = document.querySelector('#clearSearch');
+
+usernameInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        searchUsers();
+    }
+});
+firstNameInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        searchUsers();
+    }
+});
+lastNameInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        searchUsers();
+    }
+});
 
 const getUsers = async () => {
     const res = await fetch(url);
@@ -13,6 +35,7 @@ const getUsers = async () => {
 const displayUsers = async (usersToDisplay) => {
     if (usersToDisplay.length === 0) {
         users.innerHTML = "Ühtegi kasutajat ei leitud. Proovi uuesti.";
+        table.style.display = 'table';
     } else {
         let dataUsers = usersToDisplay.map((user) => {
             const { name, username, email } = user;
@@ -28,14 +51,16 @@ const displayUsers = async (usersToDisplay) => {
             </tr>
             `
         }).join('');
+        table.style.display = 'table';
         users.innerHTML = dataUsers;
     }
-
 }
+
 const searchUsers = async () => {
     const username = document.querySelector('#usernameInput').value.toLowerCase();
     const firstName = document.querySelector('#firstNameInput').value.toLowerCase();
     const lastName = document.querySelector('#lastNameInput').value.toLowerCase();
+
 
     const usersData = await getUsers();
     const filteredUsers = usersData.filter(user => {
@@ -48,4 +73,12 @@ const searchUsers = async () => {
     });
     displayUsers(filteredUsers);
 }
-searchUsers();
+clearSearchLink.addEventListener('click', () => {
+    usernameInput.value = '';
+    firstNameInput.value = '';
+    lastNameInput.value = '';
+
+    users.innerHTML = '';
+
+    table.style.display = 'none';
+});

@@ -1,6 +1,8 @@
 body {
-    background: linear-gradient(to right, #f6f1d3, #648880, #293f50);
+    background: linear-gradient(to right, #648880, #293f50);
+    color: #f6f1d3;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -8,24 +10,15 @@ body {
     align-items: center;
     padding: 10px;
 }
-.h1 {
-    text-align: 0 !important;
-}
 
 .search {
+    width: 100%;
     display: flex;
-    width: 50%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
-    border: 1px;
-    border-color: black;
-    border-style: initial;
     padding: 10px;
-}
-.btn {
-    width: 100%;
+    border: 1px solid #648880;
 }
 
 .inputs {
@@ -34,18 +27,35 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+    background: linear-gradient(to right, #648880, #293f50);
 }
-.inputs > input {
+
+.inputs>input {
     margin-right: 10px;
 }
-.inputs > input:last-child {
+
+.inputs>input:last-child {
     margin-right: 0;
-} 
+}
+
+.clear-container {
+justify-content: start;
+align-items: start;    
+}
+
+.clear {
+size: 15px;    
+}
+
 .table {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-
+    max-width: 100%;
+    color: #f6f1d3;
+    text-decoration: #f6f1d3;
+}
+.table>tbody {
+    max-width: 100%;
 }

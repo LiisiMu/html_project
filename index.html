@@ -14,19 +14,21 @@
 
 <body>
     <div class="container">
-        <div class="h1">Otsi kasutajat</div>
+        <h3>Otsi kasutajat</h3>
         <div class="search">
             <div class="inputs">
-                <input id="usernameInput" class="form-control" type="text" placeholder="Kasutajanimi"
-                    onkeypress="searchUsers()">
-                <input id="firstNameInput" class="form-control" type="text" placeholder="Eesnimi"
-                    onkeypress="searchUsers()">
-                <input id="lastNameInput" class="form-control" type="text" placeholder="Perekonnanimi"
-                    onkeypress="searchUsers()">
+                <input id="usernameInput" class="form-control" type="text" placeholder="Kasutajanimi">
+                <input id="firstNameInput" class="form-control" type="text" placeholder="Eesnimi">
+                <input id="lastNameInput" class="form-control" type="text" placeholder="Perekonnanimi">
             </div>
-            <button onclick="searchUsers()" type="button" class="btn btn-primary btn-block">OTSI</button>
+            <div class="d-grid gap-2">
+                <button onclick="searchUsers()" type="button" class="btn btn-success">OTSI</button>
+            </div>
+            <div class="clear-container">
+                <a id="clearSearch" class="clear">Tühista otsing</a>
+            </div>
         </div>
-        <table class="table table-striped table-hover">
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col">Kasutajanimi</th>
