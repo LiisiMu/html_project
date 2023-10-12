@@ -39,23 +39,86 @@ body {
 }
 
 .clear-container {
-justify-content: start;
-align-items: start;    
+    justify-content: center;
 }
 
 .clear {
-size: 15px;    
+    size: 15px;
+    cursor: pointer;
+    color: #f6f1d3;
+    transition: 0.3s;
+}
+
+.clear:hover {
+    color: #293f50;
+}
+
+.add-user {
+    cursor: pointer;
+    place-self: start;
+}
+.add-user-text {
+    font-size: smaller;
+    color: #293f50 ;
 }
 
 .table {
     display: none;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     max-width: 100%;
     color: #f6f1d3;
     text-decoration: #f6f1d3;
 }
-.table>tbody {
-    max-width: 100%;
+.headingtext {
+    font-size: medium;
+}
+.bodytext {
+    font-size: small;
+}
+.userbutton {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .inputs {
+        flex-direction: column;
+    }
+
+    .inputs>input {
+        margin-right: 0;
+        margin-bottom: 2px;
+        font-size: smaller;
+    }
+    .table {
+        display: none;
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        table-layout: fixed;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+    .search {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border: 1px solid #648880;
+    }
+    .headingtext {
+        font-size: small;
+    }
+    .bodytext {
+        font-size: smaller;
+    }
 }
