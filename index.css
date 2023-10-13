@@ -38,6 +38,17 @@ body {
     margin-right: 0;
 }
 
+.btn {
+    background: #293f50;
+    color: #f6f1d3;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background: #f6f1d3;
+    color: #293f50;
+}
+
 .clear-container {
     justify-content: center;
 }
@@ -46,20 +57,24 @@ body {
     size: 15px;
     cursor: pointer;
     color: #f6f1d3;
-    transition: 0.3s;
 }
 
 .clear:hover {
     color: #293f50;
+    transition: 0.3s;
 }
 
 .add-user {
     cursor: pointer;
     place-self: start;
+    border-style: none;
+    background: none;
+    color: #f6f1d3;
 }
-.add-user-text {
-    font-size: smaller;
-    color: #293f50 ;
+
+.add-user:hover {
+    color: #293f50;
+    transition: 0.3s;
 }
 
 .table {
@@ -71,12 +86,15 @@ body {
     color: #f6f1d3;
     text-decoration: #f6f1d3;
 }
+
 .headingtext {
     font-size: medium;
 }
+
 .bodytext {
     font-size: small;
 }
+
 .userbutton {
     cursor: pointer;
     margin-left: 10px;
@@ -92,6 +110,7 @@ body {
         margin-bottom: 2px;
         font-size: smaller;
     }
+
     .table {
         display: none;
         width: 100%;
@@ -99,6 +118,7 @@ body {
         word-wrap: break-word;
         table-layout: fixed;
     }
+
     .container {
         display: flex;
         flex-direction: column;
@@ -106,6 +126,7 @@ body {
         align-items: center;
         padding: 5px;
     }
+
     .search {
         width: 100%;
         display: flex;
@@ -115,9 +136,11 @@ body {
         padding: 5px;
         border: 1px solid #648880;
     }
+
     .headingtext {
         font-size: small;
     }
+
     .bodytext {
         font-size: smaller;
     }

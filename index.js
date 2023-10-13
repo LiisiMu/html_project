@@ -29,6 +29,7 @@ const getUsers = async () => {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
         const data = await res.json();
+        localStorage.setItem("users", JSON.stringify(data))
     return data;
 }
 
@@ -37,7 +38,7 @@ const displayUsers = async (usersToDisplay) => {
         users.innerHTML = "Ühtegi kasutajat ei leitud. Proovi uuesti.";
         table.style.display = 'table';
     } else {
-        let dataUsers = usersToDisplay.map((user) => {
+        let usersData = usersToDisplay.map((user) => {
             const { name, username, email, id } = user;
             const fullName = name.split(' ');
             const firstName = fullName[0];
@@ -54,7 +55,7 @@ const displayUsers = async (usersToDisplay) => {
             `
         }).join('');
         table.style.display = 'table';
-        users.innerHTML = dataUsers;
+        users.innerHTML = usersData;
     }
     usersToDisplay.forEach((user) => {
         const deleteButton = document.querySelector(`#delete-${user.id}`);

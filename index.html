@@ -22,16 +22,16 @@
                 <input id="lastNameInput" class="form-control" type="text" placeholder="Perekonnanimi">
             </div>
             <div class="d-grid gap-2">
-                <button onclick="searchUsers()" type="button" class="btn btn-success">OTSI</button>
+                <button onclick="searchUsers()" type="button" class="btn">OTSI</button>
             </div>
                 <div class="clear-container">
                     <a id="clearSearch" class="clear">Tühista otsing</a>
                 </div>
         </div>
-        <div class="add-user">
+        <button class="add-user" onClick="addUser()">
             <i class="fa-solid fa-user-plus"></i>
-            <span class="add-user-text">Lisa kasutaja</span>
-        </div>
+            <span>Lisa kasutaja</span>
+        </button>
         <table class="table">
             <thead>
                 <tr>
